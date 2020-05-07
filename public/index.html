@@ -4,6 +4,8 @@
 
 <h2 id='title'></h2>
 <p id='summary'></p>
+<button type="button" name="button">Submit</button>
+<textarea name="name" rows="1.5" cols="25"></textarea>
 
 <script>
 
@@ -71,8 +73,28 @@
 
 //});
     $.getJSON('https://en.wikipedia.org/api/rest_v1/page/summary/' + page + '?redirect=true', function(data1) {
-        document.getElementById('title').innerHTML = page;
-        document.getElementById('summary').innerHTML = data1['extract'];
+        var firstName, lastName, name;
+        name = page;
+        var underscore = name.indexOf('_');
+        firstName = name.substring(0, underscore);
+        name = name.substring(underscore+1);
+        underscore = name.indexOf('_');
+        name = name.substring(underscore+1);
+        if (name.indexOf('_') != -1) {
+            lastName = name.substring(name.indexOf('_')+1);
+        } else {
+            lastName = name;
+        }
+        console.log(lastName);
+        let reF = new RegExp(firstName, 'gi');
+        let reL = new RegExp(lastName, 'gi');
+        console.log(reF);
+        var content = data1['extract'];
+        content = content.replace(reF, '_'.repeat(firstName.length));
+        content = content.replace(reL, '_'.repeat(lastName.length));
+
+        //document.getElementById('title').innerHTML = page;
+        document.getElementById('summary').innerHTML = content;
 
     });
 
