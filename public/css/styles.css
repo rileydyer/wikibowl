@@ -1,13 +1,11 @@
 body {
-  background-color: #688B58;
+  background-color: #CE6D8B;
 }
-button {
-  background-color: #54428E;
-}
-textarea {
-  background-color: #8963BA;
+input {
+  background-color: #CE2D4F;
 }
 
+
 p {
-  color: black;
+  color: #CEBBC9;
 }

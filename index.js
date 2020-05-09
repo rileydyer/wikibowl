@@ -1,13 +1,17 @@
 var express = require('express');
+var socket = require('socket.io');
 
 const port = process.env.PORT || 3000;
 var app = express();
 var server = app.listen(port, function(){
-  console.log('listening to requests on port 4000' + func());
+  console.log('listening to requests on port 3000');
 });
 
 app.use(express.static('public'));
 
-function func() {
-  return 5 + 6;
-}
+// Socket setup
+var io = socket(server);
+
+io.on('connection', function(socket){
+  console.log('made socket connection ' + socket.id);
+});
