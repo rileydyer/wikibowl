@@ -5,11 +5,10 @@
  -> Node.js  
  -> JQuery  
  -> Rest Wikipedia API
-## To do:
- -> Real time chat towards actual gameplay  
- ->
-## In progress:
- -> Gathering data from wikipedia (possibly use other part than starting summary)  
- ->
-## Completed
- -> Heroku hosting
+## Status
+ - [ ] Live gameplay and chat
+ - [ ] Server - client communication
+ - [ ] Expanding usable wikipedia articles and more efficiently storing
+ - [ ] Custom rooms
+ - [x] Initial API fetching capability
+ - [x] [Hosting on heroku](wikibowl.herokuapp.com)
