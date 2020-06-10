@@ -1,24 +1,26 @@
 var solved = false;
 
+var currentEntry = "";
+
 var input = document.getElementById("in");
 input.addEventListener("keyup", function(event) {
 if (event.keyCode === 13) {
- event.preventDefault();
- document.getElementById("btn").click();
-}
+  event.preventDefault();
+  document.getElementById("btn").click();
+  }
 });
 
 function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
 async function check() {
   document.getElementById('in').value = "";
-  solved = true;
-  await sleep(800);
-  solved = false;
-  generateQ();
+  var index = Math.floor(Math.random() * acceptable.length);
+  var page = acceptable[index];
+  generateQ(page);
+  currentEntry=page;
 
 }
 
@@ -69,13 +71,12 @@ var acceptable = [
 'One_Direction'
 ];
 
-generateQ();
+generateQ('One_Direction');
+currentEntry='One_Direction';
 
 
 
-async function generateQ() {
-  var index = Math.floor(Math.random() * acceptable.length);
-  var page = acceptable[index];
+async function generateQ(page) {
   console.log(page);
   $.getJSON('https://en.wikipedia.org/api/rest_v1/page/summary/' + page + '?redirect=true', async function(data1) {
       var firstName, lastName, name;
@@ -108,9 +109,11 @@ async function generateQ() {
           document.getElementById('summary').innerHTML = total;
 
         subs.splice(0, 1);
-        if (solved) {
+        if (currentEntry != page) {
           return;
         }
+
+
       }
       //wait(2000);
       document.getElementById('summary').innerHTML = content;
@@ -128,3 +131,21 @@ socket.on('connect', () => {
   document.getElementById('test').innerHTML = socket.id;
 });
 // change to process.env.port
+
+// Query DOM
+var message = document.getElementById('message');
+var handle = document.getElementById('handle');
+var btn = document.getElementById('send');
+var output = document.getElementById('output');
+
+//EMIT EVENTS
+btn.addEventListener('click', function(){
+  socket.emit('chat', {
+    message: message.value,
+    handle: handle.value
+  });
+});
+
+socket.on('chat', function(data){
+  output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+});
