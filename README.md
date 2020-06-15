@@ -1,5 +1,5 @@
 # wikibowl
- quizbowl application using wikipedia
+ quizbowl application using wikipedia based on protobowl
 ## Built with:
  -> HTML/CSS/JS  
  -> Node.js  
