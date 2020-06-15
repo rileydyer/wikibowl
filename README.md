@@ -1,3 +1,4 @@
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/rileydyer/wikibowl?color=Purple&style=plastic)
 # wikibowl
  quizbowl application using wikipedia based on protobowl
 ## Built with:
@@ -11,4 +12,4 @@
  - [ ] Expanding usable wikipedia articles and more efficiently storing
  - [ ] Custom rooms
  - [x] Initial API fetching capability
- - [x] [Hosting on heroku](wikibowl.herokuapp.com)
+ - [x] Hosting on heroku -> wikibowl.herokuapp.com
