@@ -1,4 +1,4 @@
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/rileydyer/wikibowl?color=Purple&style=plastic)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/rileydyer/wikibowl)
 # wikibowl
  quizbowl application using wikipedia based on protobowl
 ## Built with:
