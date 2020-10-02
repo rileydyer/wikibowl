@@ -13,3 +13,7 @@
  - [ ] Custom rooms
  - [x] Initial API fetching capability
  - [x] Hosting on heroku -> wikibowl.herokuapp.com
+## Currently working on:
+ - Algorithm to detect similarity to answer (for now exact answer)
+ - If correct, increase points for user and move on to next question
+ - Take answers from a database (local .txt for now)
