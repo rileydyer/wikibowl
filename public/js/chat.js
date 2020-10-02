@@ -16,11 +16,15 @@ function sleep(ms) {
 
 
 async function check() {
-  document.getElementById('in').value = "";
+  var submission = document.getElementById('in').value;
+  document.getElementById('in'.value = "";
+  if (submission == currentEntry) {
+  
   var index = Math.floor(Math.random() * acceptable.length);
   var page = acceptable[index];
   generateQ(page);
   currentEntry=page;
+  }
 
 }
 
