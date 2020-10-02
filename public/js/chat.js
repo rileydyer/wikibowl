@@ -71,8 +71,8 @@ var acceptable = [
 'One_Direction'
 ];
 
-generateQ('One_Direction');
-currentEntry='One_Direction';
+generateQ('Donald_J_Trump');
+currentEntry='Donald_J_Trump';
 
 
 
