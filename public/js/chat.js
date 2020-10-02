@@ -17,7 +17,7 @@ function sleep(ms) {
 
 async function check() {
   var submission = document.getElementById('in').value;
-  document.getElementById('in'.value = "";
+  document.getElementById('in').value = "";
   if (submission == currentEntry) {
   
   var index = Math.floor(Math.random() * acceptable.length);
